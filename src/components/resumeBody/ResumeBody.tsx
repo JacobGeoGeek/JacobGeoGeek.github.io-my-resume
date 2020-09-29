@@ -1,18 +1,21 @@
 import React, { FunctionComponent } from "react";
-import { Education } from "../../DTO/Education";
-import { Skills } from "../../DTO/Skills";
-import { WorkingExperience } from "../../DTO/WorkingExperience";
-import { Event } from "../../DTO/Event";
-import "../../index.css";
+import { IEducation } from "../../DTO/IEducation";
+import { ISkills } from "../../DTO/ISkills";
+import { IWorkingExperience } from "../../DTO/IWorkingExperience";
+import { IEvent } from "../../DTO/IEvent";
 import { AboutMe } from "./AboutMe";
 import { WorkingExperiences } from "./workingExperiences/WorkingExperiences";
+import { Skills } from "./skills/Skills";
+import { Education } from "./education/Education";
+import "../../index.css";
+import { Events } from "./events/Events";
 
 interface ContentBody {
-  educations: Array<Education>;
+  educations: Array<IEducation>;
   aboutMe: Array<string>;
-  skills: Skills;
-  workingExperiences: Array<WorkingExperience>;
-  events: Array<Event>;
+  skills: ISkills;
+  workingExperiences: Array<IWorkingExperience>;
+  events: Array<IEvent>;
 }
 
 export const ResumeBody: FunctionComponent<ContentBody> = (props) => {
@@ -20,7 +23,18 @@ export const ResumeBody: FunctionComponent<ContentBody> = (props) => {
     <div className="resume-body p-5">
       <AboutMe aboutMe={props.aboutMe} />
       <div className="row">
-        <WorkingExperiences workingExperieces={props.workingExperiences} />
+        <div className="col-lg-9">
+          <WorkingExperiences workingExperieces={props.workingExperiences} />
+          <Events events={props.events} />
+        </div>
+        <div className="col-lg-3">
+          <Skills
+            languages={props.skills.languages}
+            technical={props.skills.technical}
+          />
+
+          <Education education={props.educations} />
+        </div>
       </div>
     </div>
   );
