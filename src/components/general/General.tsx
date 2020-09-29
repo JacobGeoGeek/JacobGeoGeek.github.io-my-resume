@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { GeneralInformation } from "../../DTO/GeneralInformation";
+import { IGeneralInformation } from "../../DTO/IGeneralInformation";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 library.add(faEnvelope, faGithub);
 
-export const General: FunctionComponent<GeneralInformation> = (props) => {
+export const General: FunctionComponent<IGeneralInformation> = (props) => {
   return (
     <header className="resume-header pt-4 pt-md-0">
       <div className="media flex-column flex-md-row">
