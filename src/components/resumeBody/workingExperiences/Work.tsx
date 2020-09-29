@@ -1,11 +1,11 @@
 import React, { FunctionComponent } from "react";
-import { WorkingExperience } from "../../../DTO/WorkingExperience";
+import { IWorkingExperience } from "../../../DTO/IWorkingExperience";
 import "../../../index.css";
 import { Description } from "./Description";
 import { Position } from "./Position";
 
 export const Work: FunctionComponent<{
-  workingExperience: WorkingExperience;
+  workingExperience: IWorkingExperience;
 }> = (props) => {
   return (
     <article className="resume-timeline-item position-relative pb-5">
