@@ -5,40 +5,47 @@ import { General } from "../general/General";
 import "../../index.css";
 import { ResumeBody } from "../resumeBody/ResumeBody";
 
-export default class MyDocument extends React.Component<{}, IResume> {
-  state: IResume = {
-    aboutMe: [],
-    educations: [],
-    generalInformation: {
-      address: "",
-      city: "",
-      email: "",
-      firstName: "",
-      githubURL: "",
-      homePhone: "",
-      lastName: "",
-      mobilePhone: "",
-      postalCode: "",
-      province: "",
-    },
-    events: [],
-    skills: {
-      languages: [],
-      technical: {
-        office: [],
-        computerScience: {
-          frameworks: [],
-          programmingLanguages: [],
-          tools: [],
-        },
-        geomatics: { CAD: [], GIS: [], other: [] },
+interface ILanguage {
+  language: string;
+}
+
+export default class MyDocument extends React.Component<ILanguage, IResume> {
+  constructor(props: ILanguage) {
+    super(props);
+    this.state = {
+      aboutMe: [],
+      educations: [],
+      generalInformation: {
+        address: "",
+        city: "",
+        email: "",
+        firstName: "",
+        githubURL: "",
+        homePhone: "",
+        lastName: "",
+        mobilePhone: "",
+        postalCode: "",
+        province: "",
       },
-    },
-    workingExperiences: [],
-  };
+      events: [],
+      skills: {
+        languages: [],
+        technical: {
+          office: [],
+          computerScience: {
+            frameworks: [],
+            programmingLanguages: [],
+            tools: [],
+          },
+          geomatics: { CAD: [], GIS: [], other: [] },
+        },
+      },
+      workingExperiences: [],
+    };
+  }
 
   async componentDidMount() {
-    const dataResume = await api.getResume("EN");
+    const dataResume = await api.getResume(this.props.language);
 
     this.setState({
       generalInformation: dataResume.generalInformation,
@@ -48,6 +55,21 @@ export default class MyDocument extends React.Component<{}, IResume> {
       workingExperiences: dataResume.workingExperience,
       events: dataResume.events,
     });
+  }
+
+  async componentDidUpdate(prevProps: ILanguage) {
+    if (this.props.language !== prevProps.language) {
+      const dataResume = await api.getResume(this.props.language);
+
+      this.setState({
+        generalInformation: dataResume.generalInformation,
+        educations: dataResume.education,
+        aboutMe: dataResume.aboutMe,
+        skills: dataResume.skills,
+        workingExperiences: dataResume.workingExperience,
+        events: dataResume.events,
+      });
+    }
   }
 
   public render() {
