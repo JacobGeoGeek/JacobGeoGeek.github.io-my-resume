@@ -1,12 +1,8 @@
 import React, { FunctionComponent } from "react";
 import { IGeneralInformation } from "../../DTO/IGeneralInformation";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import "../../index.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-library.add(faEnvelope, faGithub);
+import { FaRegEnvelope, FaPhoneAlt, FaMobileAlt } from "react-icons/fa";
+import { DiGithubBadge } from "react-icons/di";
 
 export const General: FunctionComponent<IGeneralInformation> = (props) => {
   return (
@@ -22,37 +18,36 @@ export const General: FunctionComponent<IGeneralInformation> = (props) => {
             <h1 className="name mt-0 mb-1 text-white text-uppercase">
               {props.firstName + " " + props.lastName}
             </h1>
-            <div className="title mb-3">Full Stack Developer</div>
+            <div className="title mb-3">
+              Graduated Full stack developer student
+            </div>
             <ul className="list-unstyled">
               <li className="mb-2">
                 <a href={"mailto:" + props.email}>
-                  <FontAwesomeIcon
+                  <FaRegEnvelope
                     className="fa-fw mr-2"
-                    icon={["far", "envelope"]}
-                    transform="grow-3"
+                    size="1.2em"
+                    title="Email"
                   />
+
                   {props.email}
                 </a>
               </li>
               <li className="mb-2">
-                <a href="test">
-                  <FontAwesomeIcon
-                    className="fa-fw mr-2"
-                    icon={["far", "envelope"]}
-                    transform="grow-3"
-                  />
-                  {props.homePhone}
-                </a>
+                <FaPhoneAlt
+                  className="fa-fw mr-2"
+                  size="1.2em"
+                  title="Home phone"
+                />
+                <a href="test">{props.homePhone}</a>
               </li>
               <li>
-                <a href="test">
-                  <FontAwesomeIcon
-                    className="fa-fw mr-2"
-                    icon={["far", "envelope"]}
-                    transform="grow-3"
-                  />
-                  {props.mobilePhone}
-                </a>
+                <FaMobileAlt
+                  className="fa-fw mr-2"
+                  size="1.2em"
+                  title="Mobile phone"
+                />
+                <a href="test">{props.mobilePhone}</a>
               </li>
             </ul>
           </div>
@@ -61,9 +56,10 @@ export const General: FunctionComponent<IGeneralInformation> = (props) => {
               <li className="mb-3">
                 <a href={props.githubURL}>
                   <span className="fa-container text-center mr-2">
-                    <FontAwesomeIcon
+                    <DiGithubBadge
                       className="fa-fw"
-                      icon={["fab", "github"]}
+                      size="1.5em"
+                      title="Github"
                     />
                   </span>
                   {props.githubURL}
