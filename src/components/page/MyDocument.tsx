@@ -12,6 +12,7 @@ interface ILanguage {
 
 export default class MyDocument extends React.Component<ILanguage, IResume> {
   private resumeFactory: FactoryResume;
+
   constructor(props: ILanguage) {
     super(props);
     this.resumeFactory = new FactoryResume();
