@@ -4,71 +4,49 @@ import * as api from "../../api/resumeApi";
 import { General } from "../general/General";
 import "../../index.css";
 import { ResumeBody } from "../resumeBody/ResumeBody";
+import { FactoryResume } from "./factory/FactoryResume";
 
 interface ILanguage {
   language: string;
 }
 
 export default class MyDocument extends React.Component<ILanguage, IResume> {
+  private resumeFactory: FactoryResume;
   constructor(props: ILanguage) {
     super(props);
-    this.state = {
-      aboutMe: [],
-      educations: [],
-      generalInformation: {
-        address: "",
-        city: "",
-        email: "",
-        firstName: "",
-        githubURL: "",
-        homePhone: "",
-        lastName: "",
-        mobilePhone: "",
-        postalCode: "",
-        province: "",
-      },
-      events: [],
-      skills: {
-        languages: [],
-        technical: {
-          office: [],
-          computerScience: {
-            frameworks: [],
-            programmingLanguages: [],
-            tools: [],
-          },
-          geomatics: { CAD: [], GIS: [], other: [] },
-        },
-      },
-      workingExperiences: [],
-    };
+    this.resumeFactory = new FactoryResume();
+    this.state = this.resumeFactory.createEmptyResume();
   }
 
   async componentDidMount() {
     const dataResume = await api.getResume(this.props.language);
-
-    this.setState({
-      generalInformation: dataResume.generalInformation,
-      educations: dataResume.education,
-      aboutMe: dataResume.aboutMe,
-      skills: dataResume.skills,
-      workingExperiences: dataResume.workingExperience,
-      events: dataResume.events,
-    });
+    console.log(dataResume);
+    this.setState(
+      this.resumeFactory.createEmptyResume(
+        dataResume.aboutMe,
+        dataResume.education,
+        dataResume.generalInformation,
+        dataResume.events,
+        dataResume.skills,
+        dataResume.workingExperience
+      )
+    );
   }
 
   async componentDidUpdate(prevProps: ILanguage) {
     if (this.props.language !== prevProps.language) {
       const dataResume = await api.getResume(this.props.language);
 
-      this.setState({
-        generalInformation: dataResume.generalInformation,
-        educations: dataResume.education,
-        aboutMe: dataResume.aboutMe,
-        skills: dataResume.skills,
-        workingExperiences: dataResume.workingExperience,
-        events: dataResume.events,
-      });
+      this.setState(
+        this.resumeFactory.createEmptyResume(
+          dataResume.aboutMe,
+          dataResume.education,
+          dataResume.generalInformation,
+          dataResume.events,
+          dataResume.skills,
+          dataResume.workingExperience
+        )
+      );
     }
   }
 
