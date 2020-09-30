@@ -3,7 +3,7 @@ import { IEducation } from "../../DTO/IEducation";
 import { ISkills } from "../../DTO/ISkills";
 import { IWorkingExperience } from "../../DTO/IWorkingExperience";
 import { IEvent } from "../../DTO/IEvent";
-import { AboutMe } from "./AboutMe";
+import { AboutMe } from "./aboutMe/AboutMe";
 import { WorkingExperiences } from "./workingExperiences/WorkingExperiences";
 import { Skills } from "./skills/Skills";
 import { Education } from "./education/Education";
