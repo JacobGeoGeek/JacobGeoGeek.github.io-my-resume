@@ -1,7 +1,7 @@
 import React from "react";
 import { IResume } from "../../DTO/IResume";
 import * as api from "../../api/resumeApi";
-import { General } from "../general/General";
+import { ResumeHeader } from "../resumeHeader/ResumeHeader";
 import "../../index.css";
 import { ResumeBody } from "../resumeBody/ResumeBody";
 import { FactoryResume } from "./factory/FactoryResume";
@@ -16,14 +16,14 @@ export default class MyDocument extends React.Component<ILanguage, IResume> {
   constructor(props: ILanguage) {
     super(props);
     this.resumeFactory = new FactoryResume();
-    this.state = this.resumeFactory.createEmptyResume();
+    this.state = this.resumeFactory.createResume();
   }
 
   async componentDidMount() {
     const dataResume = await api.getResume(this.props.language);
     console.log(dataResume);
     this.setState(
-      this.resumeFactory.createEmptyResume(
+      this.resumeFactory.createResume(
         dataResume.aboutMe,
         dataResume.education,
         dataResume.generalInformation,
@@ -39,7 +39,7 @@ export default class MyDocument extends React.Component<ILanguage, IResume> {
       const dataResume = await api.getResume(this.props.language);
 
       this.setState(
-        this.resumeFactory.createEmptyResume(
+        this.resumeFactory.createResume(
           dataResume.aboutMe,
           dataResume.education,
           dataResume.generalInformation,
@@ -55,7 +55,7 @@ export default class MyDocument extends React.Component<ILanguage, IResume> {
     return (
       <article className="resume-wrapper text-center position-relative">
         <div className="resume-wrapper-inner mx-auto text-left bg-white shadow-lg">
-          <General
+          <ResumeHeader
             firstName={this.state.generalInformation.firstName}
             lastName={this.state.generalInformation.lastName}
             address={this.state.generalInformation.address}

@@ -44,7 +44,7 @@ export class FactoryResume {
     };
   }
 
-  public createEmptyResume(
+  public createResume(
     aboutMe?: any,
     educations?: any,
     generalInformation?: any,

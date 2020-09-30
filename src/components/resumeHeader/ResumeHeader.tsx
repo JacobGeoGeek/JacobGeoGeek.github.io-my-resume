@@ -4,7 +4,7 @@ import "../../index.css";
 import { FaRegEnvelope, FaPhoneAlt, FaMobileAlt } from "react-icons/fa";
 import { DiGithubBadge } from "react-icons/di";
 
-export const General: FunctionComponent<IGeneralInformation> = (props) => {
+export const ResumeHeader: FunctionComponent<IGeneralInformation> = (props) => {
   return (
     <header className="resume-header pt-4 pt-md-0">
       <div className="media flex-column flex-md-row">
