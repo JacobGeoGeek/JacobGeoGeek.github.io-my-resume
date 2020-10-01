@@ -3,6 +3,7 @@ import MyDocument from "./components/page/MyDocument";
 import "./App.css";
 import { Credit } from "./components/page/Credit";
 import { Language } from "./components/page/Language";
+import i18n from "./i18n/i18n";
 
 enum languages {
   EN = "EN",
@@ -14,9 +15,15 @@ interface IAppState {
   changeLanguage: () => void;
 }
 
-function getOppsiteLanguage(language: string): string {
-  return language === languages.EN ? languages.FR : languages.EN;
-}
+const getOppsiteLanguage = (language: string): string => {
+  if (language === languages.EN) {
+    i18n.changeLanguage(languages.FR);
+    return languages.FR;
+  }
+
+  i18n.changeLanguage(languages.EN);
+  return languages.EN;
+};
 
 export default class App extends React.Component<{}, IAppState> {
   state: IAppState = {
