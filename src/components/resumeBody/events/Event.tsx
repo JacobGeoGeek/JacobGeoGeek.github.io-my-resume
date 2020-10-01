@@ -1,10 +1,14 @@
 import React, { FunctionComponent } from "react";
+import { useTranslation } from "react-i18next";
 import { IEvent } from "../../../DTO/IEvent";
 
 export const Event: FunctionComponent<IEvent> = (props) => {
+  const { t } = useTranslation();
+
   const description = props.description.map((item, index) => (
     <li key={index}>{item}</li>
   ));
+
   return (
     <article className="position-relative pb-5">
       <div className="resume-timeline-item-header mb-2">
@@ -22,7 +26,7 @@ export const Event: FunctionComponent<IEvent> = (props) => {
       </div>
       <div className="resume-timeline-item-desc">
         <h4 className="resume-timeline-item-desc-heading font-weight-bold">
-          Description
+          {t("description")}
         </h4>
         <ul>{description}</ul>
       </div>

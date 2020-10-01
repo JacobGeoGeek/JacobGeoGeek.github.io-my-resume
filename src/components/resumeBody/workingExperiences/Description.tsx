@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from "react";
+import { useTranslation } from "react-i18next";
 import "../../../index.css";
 
 export const Description: FunctionComponent<{
@@ -14,14 +15,17 @@ export const Description: FunctionComponent<{
       <span className="badge badge-primary badge-pill">{item}</span>
     </li>
   ));
+
+  const { t } = useTranslation();
+
   return (
     <div className="resume-timeline-item-desc">
       <h4 className="resume-timeline-item-desc-heading font-weight-bold">
-        Description
+        {t("description")}
       </h4>
       <ul>{listDescriptions}</ul>
       <h4 className="resume-timeline-item-desc-heading font-weight-bold">
-        Technologies used:
+        {t("technologieUsed")}
       </h4>
       <ul className="list-inline">{listStacks}</ul>
     </div>

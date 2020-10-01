@@ -3,8 +3,10 @@ import { IGeneralInformation } from "../../DTO/IGeneralInformation";
 import "../../index.css";
 import { FaRegEnvelope, FaPhoneAlt, FaMobileAlt } from "react-icons/fa";
 import { DiGithubBadge } from "react-icons/di";
+import { useTranslation } from "react-i18next";
 
 export const ResumeHeader: FunctionComponent<IGeneralInformation> = (props) => {
+  const { t } = useTranslation();
   return (
     <header className="resume-header pt-4 pt-md-0">
       <div className="media flex-column flex-md-row">
@@ -18,16 +20,14 @@ export const ResumeHeader: FunctionComponent<IGeneralInformation> = (props) => {
             <h1 className="name mt-0 mb-1 text-white text-uppercase">
               {props.firstName + " " + props.lastName}
             </h1>
-            <div className="title mb-3">
-              Graduated Full stack developer student
-            </div>
+            <div className="title mb-3">{t("title")}</div>
             <ul className="list-unstyled">
               <li className="mb-2">
                 <a href={"mailto:" + props.email}>
                   <FaRegEnvelope
                     className="fa-fw mr-2"
                     size="1.2em"
-                    title="Email"
+                    title={t("email")}
                   />
 
                   {props.email}
@@ -37,7 +37,7 @@ export const ResumeHeader: FunctionComponent<IGeneralInformation> = (props) => {
                 <FaPhoneAlt
                   className="fa-fw mr-2"
                   size="1.2em"
-                  title="Home phone"
+                  title={t("homePhone")}
                 />
                 <a href="test">{props.homePhone}</a>
               </li>
@@ -45,7 +45,7 @@ export const ResumeHeader: FunctionComponent<IGeneralInformation> = (props) => {
                 <FaMobileAlt
                   className="fa-fw mr-2"
                   size="1.2em"
-                  title="Mobile phone"
+                  title={t("mobilePhone")}
                 />
                 <a href="test">{props.mobilePhone}</a>
               </li>

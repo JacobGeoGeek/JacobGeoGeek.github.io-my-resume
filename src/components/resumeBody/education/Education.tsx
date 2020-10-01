@@ -1,10 +1,13 @@
 import React, { FunctionComponent } from "react";
+import { useTranslation } from "react-i18next";
 import { IEducation } from "../../../DTO/IEducation";
 import "../../../index.css";
 
 export const Education: FunctionComponent<{ education: Array<IEducation> }> = (
   props
 ) => {
+  const { t } = useTranslation();
+
   const listEducation = props.education.map((item, index) => (
     <li className="mb-2" key={index}>
       <div className="resume-degree font-weight-bold">{item.degree}</div>
@@ -16,10 +19,11 @@ export const Education: FunctionComponent<{ education: Array<IEducation> }> = (
       </div>
     </li>
   ));
+
   return (
     <section className="resume-section education-section mb-5">
       <h2 className="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">
-        Education
+        {t("education")}
       </h2>
       <div className="resume-section-content">
         <ul className="list-unstyled">{listEducation}</ul>

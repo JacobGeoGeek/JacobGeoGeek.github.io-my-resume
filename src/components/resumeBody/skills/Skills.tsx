@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from "react";
+import { useTranslation } from "react-i18next";
 import { ISkills } from "../../../DTO/ISkills";
 import "../../../index.css";
 import { Languages } from "./Languages";
@@ -9,32 +10,35 @@ export const Skills: FunctionComponent<ISkills> = (props) => {
     props.technical.geomatics.GIS,
     props.technical.geomatics.other
   );
+
+  const { t } = useTranslation();
+
   return (
     <div>
       <section className="resume-section skills-section mb-5">
         <h2 className="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">
-          Skills & Tools
+          {t("skills")}
         </h2>
         <div className="resume-section-content">
           <SkillSets title={"Office"} skills={props.technical.office} />
-          <SkillSets title={"Geomatics"} skills={geomaticsSkills} />
+          <SkillSets title={t("geomatics")} skills={geomaticsSkills} />
           <SkillSets
-            title={"Programming"}
+            title={t("programming")}
             skills={props.technical.computerScience.programmingLanguages}
           />
           <SkillSets
-            title={"Framework"}
+            title={t("framework")}
             skills={props.technical.computerScience.frameworks}
           />
           <SkillSets
-            title={"Tools"}
+            title={t("tools")}
             skills={props.technical.computerScience.tools}
           />
         </div>
       </section>
       <section className="resume-section skills-section mb-5">
         <h2 className="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">
-          Languages
+          {t("languages")}
         </h2>
         <div className="resume-section-content">
           <Languages languages={props.languages} />
