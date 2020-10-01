@@ -1,0 +1,20 @@
+{
+  "title": "Étudiant diplômé: développeur Full stack",
+  "email": "Courriel",
+  "homePhone": "Téléphone maison",
+  "mobilePhone": "Téléphone mobile",
+  "aboutMe": "À propos de moi",
+  "introduction": "Un étudiant gradué en informatique qui est/a",
+  "workExperience": "Expérience de travail",
+  "description": "Description",
+  "technologieUsed": "Technologies utilisées",
+  "skills": "Compétences",
+  "geomatics": "Géomatique",
+  "programming": "Programmation",
+  "framework": "Librairie",
+  "tools": "Outils",
+  "languages": "langues",
+  "education": "Éducation",
+  "events": "Événements",
+  "credit": "Le design du CV est conçu par"
+}
