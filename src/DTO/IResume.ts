@@ -7,8 +7,8 @@ import { IEvent } from "./IEvent";
 export interface IResume {
   generalInformation: IGeneralInformation;
   educations: Array<IEducation>;
-  aboutMe: Array<string>;
   skills: ISkills;
   workingExperiences: Array<IWorkingExperience>;
   events: Array<IEvent>;
+  aboutMe: Array<string>;
 }
