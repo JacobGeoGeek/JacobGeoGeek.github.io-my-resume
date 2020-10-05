@@ -7,5 +7,6 @@ export class Configuration {
   static headers = {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Methods": "*",
+    "content-type": "application/json",
   };
 }
