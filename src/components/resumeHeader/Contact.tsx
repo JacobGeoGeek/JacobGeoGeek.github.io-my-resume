@@ -6,6 +6,7 @@ interface IContact {
   title: string;
   value: string;
   icon: IconType;
+  isEMail: boolean;
 }
 
 export const Contact: FunctionComponent<IContact> = (props) => {
@@ -13,7 +14,7 @@ export const Contact: FunctionComponent<IContact> = (props) => {
 
   return (
     <li className="mb-2">
-      <a href={props.value}>
+      <a href={props.isEMail ? "mailto:" + props.value : "#"}>
         <Icon className="fa-fw mr-2" size="1.2em" title={props.title} />
         {props.value}
       </a>

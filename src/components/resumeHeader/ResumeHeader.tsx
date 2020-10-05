@@ -23,9 +23,9 @@ export const ResumeHeader: FunctionComponent<IGeneralInformation> = (props) => {
             <h1 className="name mt-0 mb-1 text-white text-uppercase">{props.firstName + " " + props.lastName}</h1>
             <div className="title mb-3">{t("title")}</div>
             <ul className="list-unstyled">
-              <Contact icon={FaRegEnvelope} title={t("email")} value={props.email} />
-              <Contact icon={FaPhoneAlt} title={t("homePhone")} value={props.homePhone} />
-              <Contact icon={FaMobileAlt} title={t("mobilePhone")} value={props.mobilePhone} />
+              <Contact icon={FaRegEnvelope} title={t("email")} value={props.email} isEMail={true} />
+              <Contact icon={FaPhoneAlt} title={t("homePhone")} value={props.homePhone} isEMail={false} />
+              <Contact icon={FaMobileAlt} title={t("mobilePhone")} value={props.mobilePhone} isEMail={false} />
             </ul>
           </div>
           <div className="secondary-info ml-md-auto mt-2">
