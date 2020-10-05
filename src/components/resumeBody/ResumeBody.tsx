@@ -28,11 +28,7 @@ export const ResumeBody: FunctionComponent<ContentBody> = (props) => {
           <Events events={props.events} />
         </div>
         <div className="col-lg-3">
-          <Skills
-            languages={props.skills.languages}
-            technical={props.skills.technical}
-          />
-
+          <Skills languages={props.skills.languages} technical={props.skills.technical} />
           <Education education={props.educations} />
         </div>
       </div>

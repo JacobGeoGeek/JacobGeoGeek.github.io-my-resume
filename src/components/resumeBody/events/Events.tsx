@@ -18,9 +18,7 @@ export const Events: FunctionComponent<{ events: Array<IEvent> }> = (props) => {
 
   return (
     <section className="resume-section reference-section mb-5">
-      <h2 className="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">
-        {t("events")}
-      </h2>
+      <h2 className="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">{t("events")}</h2>
       <div className="resume-section-content">
         <div className="position-relative">{listEvents}</div>
       </div>
