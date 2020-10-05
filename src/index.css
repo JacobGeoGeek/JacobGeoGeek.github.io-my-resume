@@ -90,6 +90,10 @@ hr {
   box-sizing: content-box;
   height: 0;
   overflow: visible;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 h1,
@@ -207,6 +211,9 @@ pre {
   margin-top: 0;
   margin-bottom: 1rem;
   overflow: auto;
+  display: block;
+  font-size: 87.5%;
+  color: #212529;
 }
 
 figure {
@@ -453,13 +460,6 @@ h6,
   line-height: 1.2;
 }
 
-hr {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  border: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
 small,
 .small {
   font-size: 80%;
@@ -560,12 +560,6 @@ kbd kbd {
   padding: 0;
   font-size: 100%;
   font-weight: 700;
-}
-
-pre {
-  display: block;
-  font-size: 87.5%;
-  color: #212529;
 }
 
 pre code {
@@ -3327,14 +3321,11 @@ input[type="button"].btn-block {
   border-right: 0;
   border-bottom: 0.3em solid transparent;
   border-left: 0.3em solid;
+  vertical-align: 0;
 }
 
 .dropright .dropdown-toggle:empty::after {
   margin-left: 0;
-}
-
-.dropright .dropdown-toggle::after {
-  vertical-align: 0;
 }
 
 .dropleft .dropdown-menu {
@@ -3350,9 +3341,6 @@ input[type="button"].btn-block {
   margin-left: 0.255em;
   vertical-align: 0.255em;
   content: "";
-}
-
-.dropleft .dropdown-toggle::after {
   display: none;
 }
 
@@ -3364,14 +3352,11 @@ input[type="button"].btn-block {
   border-top: 0.3em solid transparent;
   border-right: 0.3em solid;
   border-bottom: 0.3em solid transparent;
+  vertical-align: 0;
 }
 
 .dropleft .dropdown-toggle:empty::after {
   margin-left: 0;
-}
-
-.dropleft .dropdown-toggle::before {
-  vertical-align: 0;
 }
 
 .dropdown-menu[x-placement^="top"],
