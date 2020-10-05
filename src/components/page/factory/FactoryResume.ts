@@ -59,7 +59,7 @@ export class FactoryResume {
       generalInformation: this.createGeneralInformation(data.generalInformation),
       events: data.events ? (data.events as Array<IEvent>) : [],
       skills: this.createSkills(data.skills),
-      workingExperiences: data.workingExperience ? (data.workingExperience as Array<IWorkingExperience>) : [],
+      workingExperiences: data.workingExperiences ? (data.workingExperiences as Array<IWorkingExperience>) : [],
       aboutMe: data.aboutMe ? (data.aboutMe as Array<string>) : [],
     };
   }
