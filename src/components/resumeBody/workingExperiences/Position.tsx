@@ -11,7 +11,7 @@ interface JobPosition {
   endYear: number;
 }
 
-export const Position: React.FunctionComponent<JobPosition> = (props) => {
+export const Position: FunctionComponent<JobPosition> = (props) => {
   return (
     <div className="resume-timeline-item-header mb-2">
       <div className="d-flex flex-column flex-md-row">
