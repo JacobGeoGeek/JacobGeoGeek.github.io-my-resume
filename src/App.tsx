@@ -10,7 +10,7 @@ enum languages {
   FR = "FR",
 }
 
-interface IAppState {
+interface ILanguage {
   language: languages;
   changeLanguage: () => void;
 }
@@ -25,13 +25,10 @@ const getOppsiteLanguage = (language: string): string => {
   return languages.EN;
 };
 
-export default class App extends React.Component<{}, IAppState> {
-  state: IAppState = {
+export default class App extends React.Component<{}, ILanguage> {
+  state: ILanguage = {
     language: languages.FR,
-    changeLanguage: () =>
-      this.state.language === "EN"
-        ? this.setState({ language: languages.FR })
-        : this.setState({ language: languages.EN }),
+    changeLanguage: () => (this.state.language === "EN" ? this.setState({ language: languages.FR }) : this.setState({ language: languages.EN })),
   };
 
   public render() {
@@ -39,10 +36,7 @@ export default class App extends React.Component<{}, IAppState> {
       <div>
         <MyDocument language={getOppsiteLanguage(this.state.language)} />
         <Credit />
-        <Language
-          language={this.state.language}
-          changeLanguage={this.state.changeLanguage}
-        />
+        <Language language={this.state.language} changeLanguage={this.state.changeLanguage} />
       </div>
     );
   }
