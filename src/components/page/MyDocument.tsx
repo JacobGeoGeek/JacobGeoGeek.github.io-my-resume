@@ -16,38 +16,18 @@ export default class MyDocument extends React.Component<ILanguage, IResume> {
   constructor(props: ILanguage) {
     super(props);
     this.resumeFactory = new FactoryResume();
-    this.state = this.resumeFactory.createResume();
+    this.state = this.resumeFactory.initializeResume();
   }
 
   async componentDidMount() {
     const dataResume = await api.getResume(this.props.language);
-    console.log(dataResume);
-    this.setState(
-      this.resumeFactory.createResume(
-        dataResume.aboutMe,
-        dataResume.education,
-        dataResume.generalInformation,
-        dataResume.events,
-        dataResume.skills,
-        dataResume.workingExperience
-      )
-    );
+    this.setState(this.resumeFactory.createResume(dataResume));
   }
 
   async componentDidUpdate(prevProps: ILanguage) {
     if (this.props.language !== prevProps.language) {
       const dataResume = await api.getResume(this.props.language);
-
-      this.setState(
-        this.resumeFactory.createResume(
-          dataResume.aboutMe,
-          dataResume.education,
-          dataResume.generalInformation,
-          dataResume.events,
-          dataResume.skills,
-          dataResume.workingExperience
-        )
-      );
+      this.setState(this.resumeFactory.createResume(dataResume));
     }
   }
 

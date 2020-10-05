@@ -44,22 +44,28 @@ export class FactoryResume {
     };
   }
 
-  public createResume(
-    aboutMe?: any,
-    educations?: any,
-    generalInformation?: any,
-    events?: any,
-    skills?: any,
-    workingExperiences?: any
-  ): IResume {
+  public initializeResume(): IResume {
     return {
-      aboutMe: aboutMe ? (aboutMe as Array<string>) : [],
-      educations: educations ? (educations as Array<IEducation>) : [],
-      generalInformation: this.createGeneralInformation(generalInformation),
-      events: events ? (events as Array<IEvent>) : [],
-      skills: this.createSkills(skills),
-      workingExperiences: workingExperiences
-        ? (workingExperiences as Array<IWorkingExperience>)
+      aboutMe: [],
+      educations: [],
+      generalInformation: this.createGeneralInformation(),
+      events: [],
+      skills: this.createSkills(),
+      workingExperiences: [],
+    };
+  }
+
+  public createResume(data: any): IResume {
+    return {
+      aboutMe: data.aboutMe ? (data.aboutMe as Array<string>) : [],
+      educations: data.education ? (data.education as Array<IEducation>) : [],
+      generalInformation: this.createGeneralInformation(
+        data.generalInformation
+      ),
+      events: data.events ? (data.events as Array<IEvent>) : [],
+      skills: this.createSkills(data.skills),
+      workingExperiences: data.workingExperience
+        ? (data.workingExperience as Array<IWorkingExperience>)
         : [],
     };
   }
