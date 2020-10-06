@@ -5,17 +5,17 @@
     "main.js.map": "/my-resume/static/js/main.071350a0.chunk.js.map",
     "runtime-main.js": "/my-resume/static/js/runtime-main.fb0541e1.js",
     "runtime-main.js.map": "/my-resume/static/js/runtime-main.fb0541e1.js.map",
-    "static/js/2.032fcd09.chunk.js": "/my-resume/static/js/2.032fcd09.chunk.js",
-    "static/js/2.032fcd09.chunk.js.map": "/my-resume/static/js/2.032fcd09.chunk.js.map",
+    "static/js/2.edd2e036.chunk.js": "/my-resume/static/js/2.edd2e036.chunk.js",
+    "static/js/2.edd2e036.chunk.js.map": "/my-resume/static/js/2.edd2e036.chunk.js.map",
     "index.html": "/my-resume/index.html",
-    "precache-manifest.a260432fb084ca6691102b71cc7d9db8.js": "/my-resume/precache-manifest.a260432fb084ca6691102b71cc7d9db8.js",
+    "precache-manifest.65d0583b46f18176b8497a9d23e41a52.js": "/my-resume/precache-manifest.65d0583b46f18176b8497a9d23e41a52.js",
     "service-worker.js": "/my-resume/service-worker.js",
     "static/css/main.3df1dfa1.chunk.css.map": "/my-resume/static/css/main.3df1dfa1.chunk.css.map",
-    "static/js/2.032fcd09.chunk.js.LICENSE.txt": "/my-resume/static/js/2.032fcd09.chunk.js.LICENSE.txt"
+    "static/js/2.edd2e036.chunk.js.LICENSE.txt": "/my-resume/static/js/2.edd2e036.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.fb0541e1.js",
-    "static/js/2.032fcd09.chunk.js",
+    "static/js/2.edd2e036.chunk.js",
     "static/css/main.3df1dfa1.chunk.css",
     "static/js/main.071350a0.chunk.js"
   ]
