@@ -28,7 +28,10 @@ const getOppsiteLanguage = (language: string): string => {
 export default class App extends React.Component<{}, ILanguage> {
   state: ILanguage = {
     language: languages.FR,
-    changeLanguage: () => (this.state.language === "EN" ? this.setState({ language: languages.FR }) : this.setState({ language: languages.EN })),
+    changeLanguage: () =>
+      this.state.language === languages.EN
+        ? this.setState({ language: languages.FR })
+        : this.setState({ language: languages.EN }),
   };
 
   public render() {
