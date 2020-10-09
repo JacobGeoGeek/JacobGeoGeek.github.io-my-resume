@@ -4,6 +4,7 @@ import * as api from "../../api/resumeApi";
 import "../../index.css";
 import { FactoryResume } from "./factory/FactoryResume";
 import { Resume } from "../Resume";
+import { ProgressBar } from "../progressBar/ProgressBar";
 
 
 interface ILanguage {
@@ -33,12 +34,17 @@ export default class MyDocument extends React.Component<ILanguage, IResume> {
 
   public render() {
     return (
-      <Resume aboutMe={this.state.aboutMe}
-        educations={this.state.educations}
-        events={this.state.events}
-        generalInformation={this.state.generalInformation}
-        skills={this.state.skills} 
-        workingExperiences={this.state.workingExperiences} />
+      <div>
+        {this.state ?
+          <Resume aboutMe={this.state.aboutMe}
+            educations={this.state.educations}
+            events={this.state.events}
+            generalInformation={this.state.generalInformation}
+            skills={this.state.skills} 
+            workingExperiences={this.state.workingExperiences}
+          />
+          : <ProgressBar />}
+      </div>
     );
   }
 }
