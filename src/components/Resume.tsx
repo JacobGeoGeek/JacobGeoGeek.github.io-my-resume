@@ -3,13 +3,11 @@ import { IResume } from "../DTO/IResume";
 import { ResumeBody } from "./resumeBody/ResumeBody";
 import { ResumeHeader } from "./resumeHeader/ResumeHeader";
 import "../index.css";
-import { ProgressBar } from "./progressBar/ProgressBar";
 
 export const Resume: FunctionComponent<IResume> = (props) => {
     return (
       <article className="resume-wrapper text-center position-relative">
         <div className="resume-wrapper-inner mx-auto text-left bg-white shadow-lg">
-          <ProgressBar />
           <ResumeHeader
             firstName={props.generalInformation.firstName}
             lastName={props.generalInformation.lastName}
