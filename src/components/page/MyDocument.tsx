@@ -35,7 +35,7 @@ export default class MyDocument extends React.Component<ILanguage, IResume> {
   public render() {
     return (
       <div>
-        {this.state ?
+        {this.state.aboutMe.length !== 0 ?
           <Resume aboutMe={this.state.aboutMe}
             educations={this.state.educations}
             events={this.state.events}
