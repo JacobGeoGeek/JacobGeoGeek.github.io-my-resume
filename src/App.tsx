@@ -4,6 +4,7 @@ import "./App.css";
 import { Credit } from "./components/page/Credit";
 import { Language } from "./components/page/Language";
 import i18n from "./i18n/i18n";
+import { Export } from "./components/page/Export";
 
 enum languages {
   EN = "EN",
@@ -40,6 +41,7 @@ export default class App extends React.Component<{}, ILanguage> {
         <MyDocument language={getOppsiteLanguage(this.state.language)} />
         <Credit />
         <Language language={this.state.language} changeLanguage={this.state.changeLanguage} />
+        <Export languege={getOppsiteLanguage(this.state.language)} />
       </div>
     );
   }
