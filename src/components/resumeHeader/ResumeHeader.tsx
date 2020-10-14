@@ -6,7 +6,7 @@ import { DiGithubBadge } from "react-icons/di";
 import { useTranslation } from "react-i18next";
 import { Contact } from "./Contact";
 import { Link } from "./Link";
-
+import profile from "./photos/profile-picture.jpg"
 export const ResumeHeader: FunctionComponent<IGeneralInformation> = (props) => {
   const { t } = useTranslation();
 
@@ -15,7 +15,7 @@ export const ResumeHeader: FunctionComponent<IGeneralInformation> = (props) => {
       <div className="media flex-column flex-md-row">
         <img
           className="mr-3 img-fluid picture mx-auto"
-          src="https://i.picsum.photos/id/501/480/480.jpg?hmac=8g-6-RpnvXpl1PmFBp-mJhkQa64DR7cxGJzJCXvxv6k"
+          src={profile}
           alt="profile"
         />
         <div className="media-body p-4 d-flex flex-column flex-md-row mx-auto mx-lg-0">
