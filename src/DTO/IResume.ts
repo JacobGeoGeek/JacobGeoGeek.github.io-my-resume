@@ -11,4 +11,5 @@ export interface IResume {
   workingExperiences: Array<IWorkingExperience>;
   events: Array<IEvent>;
   aboutMe: Array<string>;
+  PDF: string;
 }

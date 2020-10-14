@@ -50,6 +50,7 @@ export class FactoryResume {
       skills: this.createSkills(),
       workingExperiences: [],
       aboutMe: [],
+      PDF: ""
     };
   }
 
@@ -61,6 +62,7 @@ export class FactoryResume {
       skills: this.createSkills(data.skills),
       workingExperiences: data.workingExperiences ? (data.workingExperiences as Array<IWorkingExperience>) : [],
       aboutMe: data.aboutMe ? (data.aboutMe as Array<string>) : [],
+      PDF: data.PDF ? (data.PDF as string): ""
     };
   }
 }

@@ -1,45 +1,58 @@
 import React from "react";
-import MyDocument from "./components/page/MyDocument";
 import "./App.css";
 import { Credit } from "./components/page/Credit";
 import { Language } from "./components/page/Language";
-import i18n from "./i18n/i18n";
+import { Export } from "./components/page/Export";
+import { IResume } from "./DTO/IResume";
+import { FactoryResume } from "./components/page/factory/FactoryResume";
+import { Resume } from "./components/Resume";
+import * as api from "./api/resumeApi";
+import { MyDocument } from "./components/page/MyDocument";
+import { languages } from "./i18n/languages";
+import { getOppositeLanguage } from "./i18n/GetOppositeLanguage";
 
-enum languages {
-  EN = "EN",
-  FR = "FR",
-}
-
-interface ILanguage {
+interface Resume {
+  resumeData: IResume;
   language: languages;
   changeLanguage: () => void;
 }
 
-const getOppsiteLanguage = (language: string): string => {
-  if (language === languages.EN) {
-    i18n.changeLanguage(languages.FR);
-    return languages.FR;
-  }
-
-  i18n.changeLanguage(languages.EN);
-  return languages.EN;
-};
-
-export default class App extends React.Component<{}, ILanguage> {
-  state: ILanguage = {
-    language: languages.FR,
-    changeLanguage: () =>
+export default class App extends React.Component<{}, Resume> {
+  private resumeFactory: FactoryResume;
+  
+  constructor(props={}) {
+    super(props)
+    this.resumeFactory = new FactoryResume();
+    this.state = {
+      resumeData: this.resumeFactory.initializeResume(),
+      language: languages.FR,
+      changeLanguage: () =>
       this.state.language === languages.EN
         ? this.setState({ language: languages.FR })
-        : this.setState({ language: languages.EN }),
-  };
+        : this.setState({ language: languages.EN })
+    }
+  }
+  
+  async componentDidMount() {
+    const dataResume = await api.getResume(getOppositeLanguage(this.state.language));
+    this.setState({ resumeData: this.resumeFactory.createResume(dataResume) });
+  }
+  
+  async componentDidUpdate(prevProps:{},prevState: Resume) {
+    if (this.state.language !== prevState.language) {
+      const dataResume = await api.getResume(getOppositeLanguage(this.state.language));
+      this.setState({ resumeData: this.resumeFactory.createResume(dataResume) });
+    }
+  }
+
 
   public render() {
     return (
       <div>
-        <MyDocument language={getOppsiteLanguage(this.state.language)} />
+        <MyDocument resume={this.state.resumeData}/>
         <Credit />
         <Language language={this.state.language} changeLanguage={this.state.changeLanguage} />
+        <Export pdfURL={this.state.resumeData.PDF}/>
       </div>
     );
   }
