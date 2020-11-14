@@ -1,10 +1,8 @@
 {
-  "title": "Graduated Full stack developer student",
+  "title": "Software developer",
   "email": "Email",
-  "homePhone": "Home phone",
   "mobilePhone": "Mobile phone",
-  "aboutMe": "About me",
-  "introduction": "A graduated computer scientist student who is/has",
+  "summary": "Summary",
   "workExperience": "Work experience",
   "description": "Description",
   "technologieUsed": "Technologies used",

@@ -1,10 +1,8 @@
 {
-  "title": "Étudiant diplômé: développeur Full stack",
+  "title": "Développeur logiciel",
   "email": "Courriel",
-  "homePhone": "Téléphone maison",
   "mobilePhone": "Téléphone mobile",
-  "aboutMe": "À propos de moi",
-  "introduction": "Un étudiant gradué en informatique qui est/a",
+  "summary": "Sommaire",
   "workExperience": "Expérience de travail",
   "description": "Description",
   "technologieUsed": "Technologies utilisées",
