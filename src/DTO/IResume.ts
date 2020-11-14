@@ -10,6 +10,6 @@ export interface IResume {
   skills: ISkills;
   workingExperiences: Array<IWorkingExperience>;
   events: Array<IEvent>;
-  aboutMe: Array<string>;
+  summary: string;
   PDF: string;
 }

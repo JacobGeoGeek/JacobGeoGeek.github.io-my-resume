@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { IGeneralInformation } from "../../DTO/IGeneralInformation";
 import "../../index.css";
-import { FaRegEnvelope, FaPhoneAlt, FaMobileAlt } from "react-icons/fa";
+import { FaRegEnvelope, FaMobileAlt } from "react-icons/fa";
 import { DiGithubBadge } from "react-icons/di";
 import { useTranslation } from "react-i18next";
 import { Contact } from "./Contact";
@@ -24,7 +24,6 @@ export const ResumeHeader: FunctionComponent<IGeneralInformation> = (props) => {
             <div className="title mb-3">{t("title")}</div>
             <ul className="list-unstyled">
               <Contact icon={FaRegEnvelope} title={t("email")} value={props.email} isEMail={true} />
-              <Contact icon={FaPhoneAlt} title={t("homePhone")} value={props.homePhone} isEMail={false} />
               <Contact icon={FaMobileAlt} title={t("mobilePhone")} value={props.mobilePhone} isEMail={false} />
             </ul>
           </div>

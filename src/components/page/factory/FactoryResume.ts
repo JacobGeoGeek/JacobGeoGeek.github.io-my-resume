@@ -16,7 +16,6 @@ export class FactoryResume {
       email: "",
       firstName: "",
       githubURL: "",
-      homePhone: "",
       lastName: "",
       mobilePhone: "",
       postalCode: "",
@@ -49,7 +48,7 @@ export class FactoryResume {
       events: [],
       skills: this.createSkills(),
       workingExperiences: [],
-      aboutMe: [],
+      summary: "",
       PDF: ""
     };
   }
@@ -61,7 +60,7 @@ export class FactoryResume {
       events: data.events ? (data.events as Array<IEvent>) : [],
       skills: this.createSkills(data.skills),
       workingExperiences: data.workingExperiences ? (data.workingExperiences as Array<IWorkingExperience>) : [],
-      aboutMe: data.aboutMe ? (data.aboutMe as Array<string>) : [],
+      summary: data.summary ? (data.summary as string) : "",
       PDF: data.PDF ? (data.PDF as string): ""
     };
   }

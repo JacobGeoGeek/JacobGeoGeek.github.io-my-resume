@@ -6,7 +6,6 @@ export interface IGeneralInformation {
   province: string;
   postalCode: string;
   mobilePhone: string;
-  homePhone: string;
   email: string;
   githubURL: string;
 }

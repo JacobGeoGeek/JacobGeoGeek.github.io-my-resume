@@ -7,8 +7,8 @@ import { ProgressBar } from "../progressBar/ProgressBar";
 export const MyDocument: FunctionComponent<{ resume: IResume }> = (props) => {
     return (
       <div>
-        {props.resume.aboutMe.length !== 0 ?
-          <Resume aboutMe={props.resume.aboutMe}
+        {props.resume.summary.length !== 0 ?
+          <Resume summary={props.resume.summary}
             educations={props.resume.educations}
             events={props.resume.events}
             generalInformation={props.resume.generalInformation}

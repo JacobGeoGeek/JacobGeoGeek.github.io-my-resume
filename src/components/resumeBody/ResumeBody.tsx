@@ -3,7 +3,7 @@ import { IEducation } from "../../DTO/IEducation";
 import { ISkills } from "../../DTO/ISkills";
 import { IWorkingExperience } from "../../DTO/IWorkingExperience";
 import { IEvent } from "../../DTO/IEvent";
-import { AboutMe } from "./aboutMe/AboutMe";
+import { Summary } from "./summary/Summary";
 import { WorkingExperiences } from "./workingExperiences/WorkingExperiences";
 import { Skills } from "./skills/Skills";
 import { Education } from "./education/Education";
@@ -12,7 +12,7 @@ import { Events } from "./events/Events";
 
 interface ContentBody {
   educations: Array<IEducation>;
-  aboutMe: Array<string>;
+  summary: string;
   skills: ISkills;
   workingExperiences: Array<IWorkingExperience>;
   events: Array<IEvent>;
@@ -21,7 +21,7 @@ interface ContentBody {
 export const ResumeBody: FunctionComponent<ContentBody> = (props) => {
   return (
     <div className="resume-body p-5">
-      <AboutMe aboutMe={props.aboutMe} />
+      <Summary summary={props.summary} />
       <div className="row">
         <div className="col-lg-9">
           <WorkingExperiences workingExperieces={props.workingExperiences} />
