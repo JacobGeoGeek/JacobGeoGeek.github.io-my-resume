@@ -16,13 +16,12 @@ export const Resume: FunctionComponent<IResume> = (props) => {
             province={props.generalInformation.province}
             postalCode={props.generalInformation.postalCode}
             mobilePhone={props.generalInformation.mobilePhone}
-            homePhone={props.generalInformation.homePhone}
             email={props.generalInformation.email}
             githubURL={props.generalInformation.githubURL}
           />
           <ResumeBody
             educations={props.educations}
-            aboutMe={props.aboutMe}
+            summary={props.summary}
             skills={props.skills}
             workingExperiences={props.workingExperiences}
             events={props.events}
