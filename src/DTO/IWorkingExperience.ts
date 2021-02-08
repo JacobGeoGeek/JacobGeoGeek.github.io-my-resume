@@ -4,8 +4,8 @@ export interface IWorkingExperience {
   city: string;
   startMonth: string;
   startYear: number;
-  endMonth: string;
-  endYear: number;
+  endMonth?: string;
+  endYear?: number;
   description: string[];
   Stacks: string[];
 }
