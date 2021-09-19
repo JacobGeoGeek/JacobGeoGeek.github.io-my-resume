@@ -18,6 +18,7 @@ export const Resume: FunctionComponent<IResume> = (props) => {
             mobilePhone={props.generalInformation.mobilePhone}
             email={props.generalInformation.email}
             githubURL={props.generalInformation.githubURL}
+            linkedinUrl={props.generalInformation.linkedinUrl}
           />
           <ResumeBody
             educations={props.educations}

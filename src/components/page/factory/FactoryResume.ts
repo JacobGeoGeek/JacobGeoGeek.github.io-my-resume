@@ -20,6 +20,7 @@ export class FactoryResume {
       mobilePhone: "",
       postalCode: "",
       province: "",
+      linkedinUrl: "",
     };
   }
 

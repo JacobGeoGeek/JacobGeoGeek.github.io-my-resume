@@ -8,4 +8,5 @@ export interface IGeneralInformation {
   mobilePhone: string;
   email: string;
   githubURL: string;
+  linkedinUrl: string;
 }

@@ -38,7 +38,7 @@ export default class App extends React.Component<{}, Resume> {
     this.setState({ resumeData: this.resumeFactory.createResume(dataResume) });
   }
   
-  async componentDidUpdate(prevProps:{},prevState: Resume) {
+  async componentDidUpdate(prevProps:{}, prevState: Resume) {
     if (this.state.language !== prevState.language) {
       const dataResume = await api.getResume(getOppositeLanguage(this.state.language));
       this.setState({ resumeData: this.resumeFactory.createResume(dataResume) });

@@ -3,6 +3,7 @@ import { IGeneralInformation } from "../../DTO/IGeneralInformation";
 import "../../index.css";
 import { FaRegEnvelope, FaMobileAlt } from "react-icons/fa";
 import { DiGithubBadge } from "react-icons/di";
+import { AiFillLinkedin } from "react-icons/ai";
 import { useTranslation } from "react-i18next";
 import { Contact } from "./Contact";
 import { Link } from "./Link";
@@ -30,6 +31,7 @@ export const ResumeHeader: FunctionComponent<IGeneralInformation> = (props) => {
           <div className="secondary-info ml-md-auto mt-2">
             <ul className="resume-social list-unstyled">
               <Link icon={DiGithubBadge} title="Github" URL={props.githubURL} />
+              <Link icon={AiFillLinkedin} title="Linkedin" URL={props.linkedinUrl} />
             </ul>
           </div>
         </div>
